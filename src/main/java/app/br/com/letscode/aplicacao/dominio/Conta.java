@@ -5,8 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Usuario {
-    private String Nome;
-    private Integer idade;
+public class Conta {
+    private String numeroConta;
+    private String senha;
+    private Usuario usuario;
     private String caminhoArquivo;
 }

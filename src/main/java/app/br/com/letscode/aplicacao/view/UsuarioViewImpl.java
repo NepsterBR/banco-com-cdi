@@ -1,6 +1,7 @@
 package app.br.com.letscode.aplicacao.view;
 
 import app.br.com.letscode.aplicacao.dominio.Usuario;
+import app.br.com.letscode.aplicacao.exceptions.PrecondicaoException;
 import app.br.com.letscode.aplicacao.service.UsuarioService;
 
 import javax.inject.Inject;
@@ -19,8 +20,12 @@ public class UsuarioViewImpl implements UsuarioView {
         usuario.setNome(input.next());
         System.out.println("Informe a idade do usúario");
         usuario.setIdade(input.nextInt());
-        usuarioService.create(usuario);
         System.out.printf("Usúario %s criado com sucesso \n", usuario.getNome());
-        return usuario;
+        try{
+            return usuarioService.create(usuario);
+        }catch (PrecondicaoException ex){
+            System.err.println(ex.getMessage());
+            return new Usuario();
+        }
     }
 }
