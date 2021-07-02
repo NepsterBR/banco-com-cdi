@@ -3,6 +3,8 @@ package app.br.com.letscode.aplicacao.dominio;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 public class Conta {
@@ -10,4 +12,6 @@ public class Conta {
     private String senha;
     private Usuario usuario;
     private String caminhoArquivo;
+    protected BigDecimal saldoCe;
+    protected BigDecimal saldoCp;
 }
