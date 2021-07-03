@@ -8,6 +8,6 @@ public interface UsuarioView {
 
     Usuario create(Scanner input);
 
-    String getUsuario(Scanner input)
+    String getUsuario(Scanner input);
 
 }
