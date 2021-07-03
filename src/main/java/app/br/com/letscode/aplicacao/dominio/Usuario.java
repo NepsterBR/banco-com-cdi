@@ -9,6 +9,5 @@ import lombok.Setter;
 public class Usuario {
     private String Nome;
     private String cpf;
-    private String senha;
     private int idade;
 }

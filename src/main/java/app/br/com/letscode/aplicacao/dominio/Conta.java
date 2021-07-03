@@ -10,8 +10,7 @@ import java.math.BigDecimal;
 public class Conta {
     private String numeroConta;
     private String senha;
-    private Usuario usuario;
-    private String caminhoArquivo;
-    protected BigDecimal saldoCe;
-    protected BigDecimal saldoCp;
+    private ContaEnum contaEnum;
+    protected BigDecimal saldo;
+
 }

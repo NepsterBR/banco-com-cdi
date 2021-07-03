@@ -9,5 +9,4 @@ import java.io.IOException;
 
 public interface UsuarioService {
     Usuario create (Usuario usuario) throws PrecondicaoException, IOException;
-    Usuario autenticar(String user, String senha) throws UserInvalidoException, FileNotFoundException;
 }

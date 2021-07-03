@@ -19,11 +19,38 @@ public class Main {
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }
-        System.out.println("\n____________Bem Vindo______________");
-        System.out.println("Vamos começar criando um login e uma senha");
-        aplicacao.createUsuario(input);
-        aplicacao.autenticarUsuario();
-        aplicacao.creatConta(input);
-        aplicacao.indice();
+        int escolha;
+        do {
+            System.out.println("____________---------Bem Vindo---------____________");
+            System.out.println("O que deseja fazer?" +
+                    "\n1- Cadastar Usuario" +
+                    "\n2- Fazer Login" +
+                    "\n3- Fechar o aplicativo");
+            escolha = input.nextInt();
+            switch (escolha) {
+                case 1:
+                    aplicacao.createUsuario(input);
+                case 2:
+                    login(aplicacao);
+                case 3:
+                    System.exit(0);
+                default:
+                    System.out.println("Escolha uma opção válida");
+            }
+        } while (escolha > 0);
+    }
+
+    private static void login(Aplicacao aplicacao) {
+        Scanner input = new Scanner(System.in);
+        String usuario = aplicacao.getUsuario(input);
+        if (usuario != null){
+            usuarioAutenticado(aplicacao, usuario);
+        }else {
+            System.out.println("Usuario é nulo");
+        }
+    }
+
+    private static void usuarioAutenticado(Aplicacao aplicacao, String cpf) {
+
     }
 }

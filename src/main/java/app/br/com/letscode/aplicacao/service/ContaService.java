@@ -8,15 +8,15 @@ import java.text.ParseException;
 
 public interface ContaService {
 
-    void criarconta(Conta conta);
+    Conta criarconta(Conta conta);
 
-    void depositar(BigDecimal depositar) throws FileNotFoundException;
+    void depositar(String conta, BigDecimal depositar);
 
-    void sacar(BigDecimal sacar);
+    void sacar(BigDecimal sacar, String conta);
 
-    void extrato() throws ParseException;
+    void extrato();
 
-    void tranferirInvestir();
+    boolean logar(String autorizado, String senha);
 
 
 }

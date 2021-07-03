@@ -5,5 +5,5 @@ import app.br.com.letscode.aplicacao.dominio.Usuario;
 import java.io.IOException;
 
 public interface UsuarioDAO {
-    Usuario create (Usuario usuario) throws IOException;
+    Usuario criar(Usuario usuario) throws IOException;
 }

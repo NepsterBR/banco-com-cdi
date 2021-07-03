@@ -2,7 +2,9 @@ package app.br.com.letscode.aplicacao.dao;
 
 import app.br.com.letscode.aplicacao.dominio.Conta;
 
+import java.math.BigDecimal;
+
 public interface ContaDao {
-    void createPoupanca(Conta conta);
-    void createEspecial(Conta conta);
+    Conta criar(Conta conta);
+    void alterar(BigDecimal saldo, String  senha, String conta, String contaEnum);
 }
