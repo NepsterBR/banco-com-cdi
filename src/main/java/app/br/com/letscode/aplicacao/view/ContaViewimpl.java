@@ -26,7 +26,10 @@ public class ContaViewimpl implements ContaView {
 
 
     public Conta createConta(Scanner input, String cpf) {
+        for (int i = 0; i<50; i++){
+        }
         var conta = new Conta();
+        conta.setNumeroConta(cpf);
         System.out.println("Qual o tipo de conta a ser criada? \n1- Especial \n2- Poupança");
         int opcao = input.nextInt();
         switch (opcao) {
@@ -57,7 +60,7 @@ public class ContaViewimpl implements ContaView {
     public void sacar(String conta) {
         System.out.println("Quanto deseja sacar?");
         BigDecimal sacar = new Scanner(System.in).nextBigDecimal();
-        contaService.depositar(conta, sacar);
+        contaService.sacar(sacar,conta);
     }
 
     @Override
@@ -65,11 +68,13 @@ public class ContaViewimpl implements ContaView {
         final var caminhoDoArquivo = "C:\\Users\\gabri\\IdeaProjects\\Banco-com-CDI\\src\\main\\java\\app\\br\\com\\letscode\\aplicacao\\arquivos/"
                 + conta + ".txt";
         try (var lerArquivo = new BufferedReader(new FileReader(caminhoDoArquivo))){
+            String senha = lerArquivo.readLine();
+            String tipoConta = lerArquivo.readLine();
             String saldo = lerArquivo.readLine();
             System.out.println("O Saldo atual é de R$" + saldo);
         } catch (Exception ex) {
             System.out.println("Erro interno, não foi possivel concluir a ação" +
-                    "contate o suporte.");
+                    "c ontate o suporte.");
         }
     }
 

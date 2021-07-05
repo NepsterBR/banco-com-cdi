@@ -28,14 +28,14 @@ public class ContaServiceImpl implements ContaService {
         final var caminhoDoArquivo = "C:\\Users\\gabri\\IdeaProjects\\Banco-com-CDI\\src\\main\\java\\app\\br\\com\\letscode\\aplicacao\\arquivos/"
                 + conta + ".txt";
         try (var lerArquivo = new BufferedReader(new FileReader(caminhoDoArquivo))){
-            String saldo = lerArquivo.readLine();
-            String contaEnum = lerArquivo.readLine();
             String senha = lerArquivo.readLine();
+            String contaEnum = lerArquivo.readLine();
+            String saldo = lerArquivo.readLine();
             BigDecimal novoSaldo = new BigDecimal(saldo).add(depositar);
             contaDao.alterar(novoSaldo,senha,conta,contaEnum);
         } catch (Exception ex) {
             System.out.println("Erro interno, não foi possivel concluir a ação" +
-                    "contate o suporte.");
+                    " contate o suporte.");
         }
     }
 
@@ -44,12 +44,12 @@ public class ContaServiceImpl implements ContaService {
         final var caminhoDoArquivo = "C:\\Users\\gabri\\IdeaProjects\\Banco-com-CDI\\src\\main\\java\\app\\br\\com\\letscode\\aplicacao\\arquivos/"
                 + conta + ".txt";
         try (var lerArquivo = new BufferedReader(new FileReader(caminhoDoArquivo))){
-            String saldo = lerArquivo.readLine();
-            String contaEnum = lerArquivo.readLine();
             String senha = lerArquivo.readLine();
+            String contaEnum = lerArquivo.readLine();
+            String saldo = lerArquivo.readLine();
             BigDecimal novoSaldo = new BigDecimal(saldo).subtract(sacar);
-            if (contaEnum.equalsIgnoreCase("CONTAESPECIAL")){
-                int limite = novoSaldo.compareTo(new BigDecimal("-200"));
+                if (contaEnum.equalsIgnoreCase("ESPECIAL")){
+                int limite = novoSaldo.compareTo(new BigDecimal("-201"));
                 if (limite < 1){
                     System.out.println("Você já ultrapassou seu limite");
                     return;
@@ -58,9 +58,12 @@ public class ContaServiceImpl implements ContaService {
             contaDao.alterar(novoSaldo,senha,conta,contaEnum);
         } catch (Exception ex) {
             System.out.println("Erro interno, não foi possivel concluir a ação" +
-                    "contate o suporte.");
+                    " contate o suporte.");
         }
     }
+
+
+
 
     @Override
     public void extrato() {

@@ -22,11 +22,10 @@ public class CantaDaoImpl implements ContaDao{
 
     @Override
     public void alterar(BigDecimal saldo, String  senha, String conta, String contaEnum){
-        final var caminhoDoArquivo = "C:\\Users\\gabri\\IdeaProjects\\Banco-com-CDI\\src\\main\\java\\app\\br\\com\\letscode\\aplicacao\\arquivos/"  +
-                conta + ".txt";
+        final var caminhoDoArquivo = "C:\\Users\\gabri\\IdeaProjects\\Banco-com-CDI\\src\\main\\java\\app\\br\\com\\letscode\\aplicacao\\arquivos/" +conta+".txt";
         try (var arquivo = new FileWriter(caminhoDoArquivo, false)) {
             var escreverArquivo = new PrintWriter(arquivo);
-            escreverArquivo.printf("%s%n%s%n%s%n",saldo,contaEnum, senha);
+            escreverArquivo.printf("%s%n%s%n%s%n",senha,contaEnum, saldo);
         } catch (Exception ex) {
             System.out.println("Não foi possivel criar o arquivo");
         }

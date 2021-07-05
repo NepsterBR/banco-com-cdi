@@ -4,24 +4,25 @@ import app.br.com.letscode.aplicacao.dominio.ContaEnum;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
-import java.io.FileNotFoundException;
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws ParseException, FileNotFoundException {
+    public static void main(String[] args) {
         final WeldContainer container = new Weld().initialize();
         final Aplicacao aplicacao = container.select(Aplicacao.class).get();
         init(aplicacao);
     }
 
-    private static void init(Aplicacao aplicacao) throws ParseException, FileNotFoundException {
+    private static void init(Aplicacao aplicacao) {
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }
         int escolha;
         do {
+            for (int i = 0; i<50; i++){
+
+            }
             System.out.println("____________---------Bem Vindo---------____________");
             System.out.println("O que deseja fazer?" +
                     "\n1- Cadastar Usuario" +
@@ -30,10 +31,19 @@ public class Main {
             escolha = input.nextInt();
             switch (escolha) {
                 case 1:
+                    for (int i = 0; i<50; i++){
+
+                    }
                     aplicacao.createUsuario(input);
                 case 2:
+                    for (int i = 0; i<50; i++){
+
+                    }
                     login(aplicacao);
                 case 3:
+                    for (int i = 0; i<50; i++){
+
+                    }
                     System.exit(0);
                 default:
                     System.out.println("Escolha uma opção válida");
@@ -56,6 +66,8 @@ public class Main {
         int escolha;
         Scanner input = new Scanner(System.in);
         do {
+            for (int i = 0; i<50; i++){
+            }
             System.out.println("O que deseja fazer?" +
                     "\n1- Cadastar nova conta" +
                     "\n2- Entrar na sua conta" +
@@ -82,24 +94,42 @@ public class Main {
     private static void contaAutenticada(Aplicacao aplicacao, String conta) {
         int escolha;
         do {
+            for (int i = 0; i<50; i++){
+
+            }
             System.out.println("Olá! que operação deseja realizar?" +
                     "\n1- Ver seu saldo" +
                     "\n2- Depositar" +
                     "\n3- Sacar");
             var input = new Scanner(System.in);
             escolha = input.nextInt();
-            switch (escolha){
+            switch (escolha) {
                 case 1:
+                    for (int i = 0; i<50; i++){
+                    }
                     aplicacao.saldo(conta);
+                    contaAutenticada(aplicacao, conta);
+                    break;
                 case 2:
+                    for (int i = 0; i<50; i++){
+                    }
                     aplicacao.deposito(conta);
+                    contaAutenticada(aplicacao, conta);
+                    break;
                 case 3:
+                    for (int i = 0; i<50; i++){
+                    }
                     aplicacao.sacar(conta);
+                    contaAutenticada(aplicacao, conta);
+                    break;
             }
-        }while (escolha>0);
+        } while (escolha > 0);
     }
 
     private static String contaLogin(Aplicacao aplicacao, String cpf) {
+        for (int i = 0; i<50; i++){
+
+        }
         System.out.println("EM qual conta deseja logar?" +
                 "\n1- Conta Especial" +
                 "\n2- Conta Poupança");
@@ -113,16 +143,13 @@ public class Main {
                 }
                 break;
             case 2:
-                if (aplicacao.getConta(cpf, ContaEnum.POUPANÇA));
+                if (aplicacao.getConta(cpf, ContaEnum.POUPANÇA)) ;
                 return cpf + ContaEnum.POUPANÇA;
             default:
                 System.out.println("Selecine uma opção válida");
         }
         return null;
     }
-
-
-
 
 }
 

@@ -24,6 +24,8 @@ public class UsuarioViewImpl implements UsuarioView {
 
     @Override
     public Usuario create(Scanner input) {
+        for (int i = 0; i<50; i++){
+        }
         Usuario usuario = new Usuario();
         System.out.print("Informe seu nome de usúario: ");
         usuario.setNome(input.next());
