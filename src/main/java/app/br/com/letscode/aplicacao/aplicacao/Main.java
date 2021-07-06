@@ -21,7 +21,7 @@ public class Main {
         int escolha;
         do {
             for (int i = 0; i<50; i++){
-
+                System.out.println();
             }
             System.out.println("____________---------Bem Vindo---------____________");
             System.out.println("O que deseja fazer?" +
@@ -32,18 +32,15 @@ public class Main {
             switch (escolha) {
                 case 1:
                     for (int i = 0; i<50; i++){
-
+                        System.out.println();
                     }
                     aplicacao.createUsuario(input);
                 case 2:
                     for (int i = 0; i<50; i++){
-
+                        System.out.println();
                     }
                     login(aplicacao);
                 case 3:
-                    for (int i = 0; i<50; i++){
-
-                    }
                     System.exit(0);
                 default:
                     System.out.println("Escolha uma opção válida");
@@ -106,18 +103,21 @@ public class Main {
             switch (escolha) {
                 case 1:
                     for (int i = 0; i<50; i++){
+                        System.out.println();
                     }
                     aplicacao.saldo(conta);
                     contaAutenticada(aplicacao, conta);
                     break;
                 case 2:
                     for (int i = 0; i<50; i++){
+                        System.out.println();
                     }
                     aplicacao.deposito(conta);
                     contaAutenticada(aplicacao, conta);
                     break;
                 case 3:
                     for (int i = 0; i<50; i++){
+                        System.out.println();
                     }
                     aplicacao.sacar(conta);
                     contaAutenticada(aplicacao, conta);
@@ -128,7 +128,7 @@ public class Main {
 
     private static String contaLogin(Aplicacao aplicacao, String cpf) {
         for (int i = 0; i<50; i++){
-
+            System.out.println();
         }
         System.out.println("EM qual conta deseja logar?" +
                 "\n1- Conta Especial" +
@@ -143,8 +143,9 @@ public class Main {
                 }
                 break;
             case 2:
-                if (aplicacao.getConta(cpf, ContaEnum.POUPANÇA)) ;
-                return cpf + ContaEnum.POUPANÇA;
+                if (aplicacao.getConta(cpf, ContaEnum.POUPANÇA)) {
+                    return cpf + ContaEnum.POUPANÇA;
+                }
             default:
                 System.out.println("Selecine uma opção válida");
         }

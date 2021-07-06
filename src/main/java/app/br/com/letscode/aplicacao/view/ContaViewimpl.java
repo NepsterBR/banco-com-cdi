@@ -22,9 +22,6 @@ public class ContaViewimpl implements ContaView {
         return contaService.logar(senha,senhaInformada);
     }
 
-
-
-
     public Conta createConta(Scanner input, String cpf) {
         for (int i = 0; i<50; i++){
         }
